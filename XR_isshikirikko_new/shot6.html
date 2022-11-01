@@ -82,12 +82,19 @@
         ></a-ring>
       </a-entity>
       <a-entity
-        id="objmodel"
+        id="objmodel1"
         obj-model="obj: #obj1; mtl: #mtl1"
+        rotation="0 -90 0"
+        scale="0 0 0"
+      ></a-entity>
+      
+      <a-entity
+        id="objmodel2"
         obj-model="obj: #obj2; mtl: #mtl2"
         rotation="0 -90 0"
         scale="0 0 0"
       ></a-entity>
+      
       <!-- scale="0.0005 0.0005 0.0005" -->
     </a-scene>
 
@@ -137,7 +144,8 @@
       var scene = document.querySelector("a-scene");
       var hitTest = document.querySelector("#hitTestMarker");
       var button = document.querySelector("#button");
-      var model = document.querySelector("#objmodel");
+      var model1 = document.querySelector("#objmodel1");
+      var model2 = document.querySelector("#objmodel2");
       const defaultSize = new THREE.Vector3(0.0005, 0.0005, 0.0005);
       const changeSize = new THREE.Vector3(0.00003, 0.00003, 0.00003);
 
