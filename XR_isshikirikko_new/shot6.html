@@ -151,24 +151,46 @@
 
       button.addEventListener("click", function () {
         //モデルの位置変更
-        model.setAttribute(
+        model1.setAttribute(
           "position",
           new THREE.Vector3(0, 0.05, 0.05).add(hitTest.object3D.position)
         );
-        model.setAttribute("rotation", hitTest.getAttribute("rotation"));
+        model1.setAttribute("rotation", hitTest.getAttribute("rotation"));
+        
+        model2.setAttribute(
+          "position",
+          new THREE.Vector3(0, 0.05, 0.05).add(hitTest.object3D.position)
+        );
+        model2.setAttribute("rotation", hitTest.getAttribute("rotation"));
+        
         //大きさリセット
-        model.setAttribute("scale", defaultSize);
+        model1.setAttribute("scale", defaultSize);
+        model2.setAttribute("scale", defaultSize);
         //model.setAttribute("rotation",
         //  new THREE.Vector3(0, -90, 0).add(hitTest.object3D.rotation)
         //);
       });
+      
       button_scale_up.addEventListener("click", function () {
         //モデルの大きさ変更
-        var scaleSize = model.getAttribute("scale");
+        var scaleSize = model1.getAttribute("scale");
         scaleSize.x = scaleSize.x + changeSize.x;
         scaleSize.y = scaleSize.y + changeSize.y;
         scaleSize.z = scaleSize.z + changeSize.z;
-        model.setAttribute(
+        model1.setAttribute(
+          "scale",
+          new THREE.Vector3(scaleSize.x, scaleSize.y, scaleSize.z)
+        );
+        //alert(scaleSize.x);
+      });
+      
+      button_scale_up.addEventListener("click", function () {
+        //モデルの大きさ変更
+        var scaleSize = model1.getAttribute("scale");
+        scaleSize.x = scaleSize.x + changeSize.x;
+        scaleSize.y = scaleSize.y + changeSize.y;
+        scaleSize.z = scaleSize.z + changeSize.z;
+        model1.setAttribute(
           "scale",
           new THREE.Vector3(scaleSize.x, scaleSize.y, scaleSize.z)
         );
@@ -177,16 +199,30 @@
 
       button_scale_down.addEventListener("click", function () {
         //モデルの大きさ変更
-        var scaleSize = model.getAttribute("scale");
+        var scaleSize = model1.getAttribute("scale");
         scaleSize.x = scaleSize.x - changeSize.x;
         scaleSize.y = scaleSize.y - changeSize.y;
         scaleSize.z = scaleSize.z - changeSize.z;
-        model.setAttribute(
+        model1.setAttribute(
           "scale",
           new THREE.Vector3(scaleSize.x, scaleSize.y, scaleSize.z)
         );
         //alert(scaleSize.x);
       });
+      
+      button_scale_down.addEventListener("click", function () {
+        //モデルの大きさ変更
+        var scaleSize = model2.getAttribute("scale");
+        scaleSize.x = scaleSize.x - changeSize.x;
+        scaleSize.y = scaleSize.y - changeSize.y;
+        scaleSize.z = scaleSize.z - changeSize.z;
+        model2.setAttribute(
+          "scale",
+          new THREE.Vector3(scaleSize.x, scaleSize.y, scaleSize.z)
+        );
+        //alert(scaleSize.x);
+      });
+      
     </script>
   </body>
 </html>
