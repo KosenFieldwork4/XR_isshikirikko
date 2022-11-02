@@ -186,11 +186,11 @@
       
       button_scale_up.addEventListener("click", function () {
         //モデルの大きさ変更
-        var scaleSize = model1.getAttribute("scale");
+        var scaleSize = model2.getAttribute("scale");
         scaleSize.x = scaleSize.x + changeSize.x;
         scaleSize.y = scaleSize.y + changeSize.y;
         scaleSize.z = scaleSize.z + changeSize.z;
-        model1.setAttribute(
+        model2.setAttribute(
           "scale",
           new THREE.Vector3(scaleSize.x, scaleSize.y, scaleSize.z)
         );
